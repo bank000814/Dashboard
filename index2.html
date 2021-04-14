@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>Mock Up</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<style>
+  .cardButton {
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    border-radius: 10px;
+  }
+
+  .cardButton:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.10), 0 10px 10px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
+  }
+</style>
+
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+      <!-- Sidebar -->
+      <div class="sidebar mt-0">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">Alexander Pierce</a>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview menu-open">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Dashboard v2</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index3.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Dashboard v3</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Dashboard v2</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v2</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Monthly Recap Report</h5>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p class="text-center">
+                        <strong>รายงานยอดขายของพนักงานขาย - เรียงตามภูมิภาค</strong>
+                      </p>
+
+                      <div class="chart">
+                        <!-- Sales Chart Canvas -->
+                        <canvas id="salesChart" height="350" style="height: 350px;"></canvas>
+                      </div>
+                      <!-- /.chart-responsive -->
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- ./card-body -->
+                <div class="">
+                  <div class="row">
+                    <div class="col-sm-2 col-6">
+                      <div class="description-block  cardButton btn1">
+                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
+                        <h5 class="description-header ">9,564,355.83</h5>
+                        <span class="description-text">กรุงเทพ</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-2 col-6">
+                      <div class="description-block  cardButton btn1">
+                        <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
+                        <h5 class="description-header ">$10,390.90</h5>
+                        <span class="description-text">ภาคเหนือ</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-2 col-6">
+                      <div class="description-block  cardButton btn1">
+                        <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
+                        <h5 class="description-header ">$24,813.53</h5>
+                        <span class="description-text">ภาคกลาง</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-2 col-6">
+                      <div class="description-block  cardButton btn1">
+                        <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
+                        <h5 class="description-header ">1200</h5>
+                        <span class="description-text">ภาคตะวันตก</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-2 col-6">
+                      <div class="description-block  cardButton btn1">
+                        <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
+                        <h5 class="description-header ">1200</h5>
+                        <span class="description-text">ภาคตะวันออก</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-2 col-6">
+                      <div class="description-block cardButton btn1">
+                        <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
+                        <h5 class="description-header ">1200</h5>
+                        <span class="description-text">ภาคตะวันออกเฉียงเหนือ</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <div class="col-md-12">
+              <!-- /.card -->
+              <div class="card">
+                <div class="card-header border-transparent">
+                  <h3 class="card-title">Latest Orders</h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table m-0">
+                      <thead>
+                        <tr>
+                          <th>ลำดับ</th>
+                          <th>ชื่อ</th>
+                          <th>Taget</th>
+                          <th>ยอดขาย-กรกฏาคม 2020</th>
+                          <th>กำไร-กรกฏาคม 2020</th>
+                        </tr>
+                      </thead>
+                      <tbody id="DataSalesPersonList">
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                          <td>Call of Duty IV</td>
+                          <td><span class="badge badge-success">Shipped</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                          <td>Samsung Smart TV</td>
+                          <td><span class="badge badge-warning">Pending</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                          <td>iPhone 6 Plus</td>
+                          <td><span class="badge badge-danger">Delivered</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                          <td>Samsung Smart TV</td>
+                          <td><span class="badge badge-info">Processing</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                          <td>Samsung Smart TV</td>
+                          <td><span class="badge badge-warning">Pending</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                          <td>iPhone 6 Plus</td>
+                          <td><span class="badge badge-danger">Delivered</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                          <td>Call of Duty IV</td>
+                          <td><span class="badge badge-success">Shipped</span></td>
+                          <td>
+                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.table-responsive -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix">
+                  <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+                  <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">กรกฏาคม 2020</h3>
+
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="chart-responsive">
+                        <canvas id="pieChart" height="240"></canvas>
+                      </div>
+                      <!-- ./chart-responsive -->
+                    </div>
+                    <!-- /.col -->
+                    <!-- <div class="col-md-4">
+                      <ul class="chart-legend clearfix">
+                        <li><i class="far fa-circle text-danger"></i> %ยอดขายเที่ยบกับยอดรวม</li>
+                        <li><i class="far fa-circle text-success"></i> %ยอดขายต่อเป้าการขาย</li>
+                        <li><i class="far fa-circle text-warning"></i> %กำไรต่อยอดขาย</li>
+                        <li><i class="far fa-circle text-info"></i> Safari</li>
+                        <li><i class="far fa-circle text-primary"></i> Opera</li>
+                        <li><i class="far fa-circle text-secondary"></i> Navigator</li>
+                      </ul>
+                    </div> -->
+                    <!-- /.col -->
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer bg-white p-0">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>ลำดับ</th>
+                        <th>ชื่อ</th>
+                        <th>Target-2020</th>
+                        <th>%ยอดขายเที่ยบกับยอดรวม</th>
+                        <th>%ยอดขายต่อเป้าการขาย</th>
+                        <th>ยอดขาย</th>
+                        <th>%กำไรต่อยอดขาย</th>
+                        <th>กำไร</th>
+                      </tr>
+                    </thead>
+                    <tbody id="DataSalesPersonList2">
+
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.footer -->
+              </div>
+            </div>
+
+            <div class="col-12">
+
+              <!-- PRODUCT LIST -->
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">ยอดขายสินค้าเดือน กรกฏาคม 2020</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="chart-responsive">
+                        <canvas id="itemChart" height="450"></canvas>
+                      </div>
+                      <table id="example3" class="table table-bordered table-hover">
+                        <thead>
+                          <tr>
+                            <th>ลำดับ</th>
+                            <th>ชื่อ</th>
+                            <th>3M</th>
+                            <th>HOUSE BRAND</th>
+                            <th>NON3M</th>
+                            <th>NON3M-NONCOM</th>
+                            <th>OTHER</th>
+                          </tr>
+                        </thead>
+                        <tbody id="DataItemTable">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center">
+                  <a href="javascript:void(0)" class="uppercase">View All Products</a>
+                </div>
+                <!-- /.card-footer -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!--/. container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Modal -->
+    <div class="modal fade text-center" id="exampleModal" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <table id="example4" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Order</th>
+                      <th>Sell Customer By</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody id="">
+                    <tr>
+                      <td><a href="">SO-001</a></td>
+                      <td>น.ส. จินดา อัมพรากร</td>
+                      <td>12 ส.ค. 2020</td>
+                      <td>859,020</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">SO-001</a></td>
+                      <td>น.ส. จินดา อัมพรากร</td>
+                      <td>12 ส.ค. 2020</td>
+                      <td>859,020</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">SO-001</a></td>
+                      <td>น.ส. จินดา อัมพรากร</td>
+                      <td>12 ส.ค. 2020</td>
+                      <td>859,020</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">SO-001</a></td>
+                      <td>น.ส. จินดา อัมพรากร</td>
+                      <td>12 ส.ค. 2020</td>
+                      <td>859,020</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Send message</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Model -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+
+  <!-- OPTIONAL SCRIPTS -->
+  <script src="dist/js/demo.js"></script>
+
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="plugins/raphael/raphael.min.js"></script>
+  <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <!-- DataTables -->
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+  <!-- PAGE SCRIPTS -->
+  <script src="dist/js/pages/dashboard2.js"></script>
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+      });
+      $('#example2').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": false,
+        "responsive": true,
+      });
+      $('#example3').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": false,
+        "responsive": true,
+      });
+      $('#example4').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
+</body>
+
+</html>
